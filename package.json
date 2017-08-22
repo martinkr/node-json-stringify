@@ -1,0 +1,29 @@
+{
+  "name": "node-json-stringify",
+  "version": "1.1.0",
+  "description": "A very basic service with one purpose: stringify a JSON object",
+  "main": "./server.js",
+  "scripts": {
+    "start": "forever -o out.log -e err.log ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martinkr/node-json-stringifier"
+  },"homepage": "https://github.com/martinkr/node-corsproxy",
+  "issues": "https://github.com/martinkr/node-corsproxy/issues",
+  "keywords": [
+    "node",
+    "json",
+    "stringifier"
+  ],
+  "author": "Martin Krause <github@mkrause.info> (http://martinkr.github.io)",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1",
+    "forever": "^0.15.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
