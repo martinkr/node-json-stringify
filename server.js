@@ -26,11 +26,14 @@ var bodyParser = require('body-parser');
 
 // setup app for parsing application/json
 app.use(bodyParser.text());
+// use pu template
+app.set('view engine', 'pug')
 
 
 /** basic route */
 app.get('/', function (req, res) {
-	res.send('<form style="" action="/" method="POST" enctype="text/plain"><textarea style="display: block; width: 500px; height: 250px" name="data"></textarea><button type="submit" style="display: block">Stringify</button></form>');
+	res.render('index', { title: 'Hey', message: 'Hello there!' })
+	// res.send('<form style="" action="/" method="POST" enctype="text/plain"><textarea style="display: block; width: 500px; height: 250px" name="data"></textarea><button type="submit" style="display: block">Stringify</button></form>');
 })
 
 /** basic route */
