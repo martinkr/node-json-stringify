@@ -1,0 +1,73 @@
+Error: /Users/mkrause/Sites/_github/node-json-stringify/views/index.pug:9:15
+    7|     p= "Creates a valid JSON string from your input!"
+    8|     form(action="/" method="POST" enctype="text/plain")
+  > 9|       textarea#(name="data")= data
+---------------------^
+    10|       button(type="submit")
+
+"(name="data")=" is not a valid ID.
+    at makeError (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-error/index.js:32:13)
+    at Lexer.error (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:58:15)
+    at Lexer.id (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:397:12)
+    at Lexer.callLexerFunction (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1319:23)
+    at Lexer.advance (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1353:15)
+    at Lexer.callLexerFunction (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1319:23)
+    at Lexer.getTokens (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1375:12)
+    at lex (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:12:42)
+    at Object.lex (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug/lib/index.js:99:27)
+    at Function.loadString [as string] (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-load/index.js:44:24)
+Error: /Users/mkrause/Sites/_github/node-json-stringify/views/index.pug:9:15
+    7|     p= "Creates a valid JSON string from your input!"
+    8|     form(action="/" method="POST" enctype="text/plain")
+  > 9|       textarea#(name="data")
+---------------------^
+    10|       button(type="submit")
+
+"(name="data")
+" is not a valid ID.
+    at makeError (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-error/index.js:32:13)
+    at Lexer.error (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:58:15)
+    at Lexer.id (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:397:12)
+    at Lexer.callLexerFunction (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1319:23)
+    at Lexer.advance (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1353:15)
+    at Lexer.callLexerFunction (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1319:23)
+    at Lexer.getTokens (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1375:12)
+    at lex (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:12:42)
+    at Object.lex (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug/lib/index.js:99:27)
+    at Function.loadString [as string] (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-load/index.js:44:24)
+Error: /Users/mkrause/Sites/_github/node-json-stringify/views/index.pug:9:15
+    7|     p= "Creates a valid JSON string from your input!"
+    8|     form(action="/" method="POST" enctype="text/plain")
+  > 9|       textarea#(name="data")
+---------------------^
+    10|       button(type="submit")
+
+"(name="data")
+" is not a valid ID.
+    at makeError (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-error/index.js:32:13)
+    at Lexer.error (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:58:15)
+    at Lexer.id (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:397:12)
+    at Lexer.callLexerFunction (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1319:23)
+    at Lexer.advance (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1353:15)
+    at Lexer.callLexerFunction (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1319:23)
+    at Lexer.getTokens (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:1375:12)
+    at lex (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-lexer/index.js:12:42)
+    at Object.lex (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug/lib/index.js:99:27)
+    at Function.loadString [as string] (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-load/index.js:44:24)
+Error: /Users/mkrause/Sites/_github/node-json-stringify/views/index.pug:10:28
+    8|     form(action="/" method="POST" enctype="text/plain")
+    9|       textarea(name="data")
+  > 10|       button(type="submit")Stringify
+-----------------------------------^
+
+Unexpected token `tag` expected `text`, `interpolated-code`, `code`, `:`, `slash`, `newline` or `eos`
+    at makeError (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-error/index.js:32:13)
+    at Parser.error (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-parser/index.js:53:15)
+    at Parser.tag (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-parser/index.js:1077:14)
+    at Parser.parseTag (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-parser/index.js:988:17)
+    at Parser.parseExpr (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-parser/index.js:208:21)
+    at Parser.block (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-parser/index.js:937:25)
+    at Parser.tag (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-parser/index.js:1087:24)
+    at Parser.parseTag (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-parser/index.js:988:17)
+    at Parser.parseExpr (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-parser/index.js:208:21)
+    at Parser.block (/Users/mkrause/Sites/_github/node-json-stringify/node_modules/pug-parser/index.js:937:25)

@@ -20,44 +20,43 @@
  * @author Martin Krause github@mkrause.info
  */
 
-var express = require('express')
-var app = express();
-var bodyParser = require('body-parser');
+const express = require('express')
+const app = express();
+const bodyParser = require('body-parser');
+const mustacheExpress = require('mustache-express');
 
 // setup app for parsing application/json
 app.use(bodyParser.text());
-// use pu template
-app.set('view engine', 'pug')
+
+
+app.engine('mustache', mustacheExpress());
+app.set('view engine', 'mustache');
 
 
 /** basic route */
-app.get('/', function (req, res) {
-	res.render('index', { title: 'Hey', message: 'Hello there!' })
+app.get('/', (req, res) => {
+	res.render('templates/index.mustache', { 'data': '{"foo" : "bar" }', 'result' : "" });
 	// res.send('<form style="" action="/" method="POST" enctype="text/plain"><textarea style="display: block; width: 500px; height: 250px" name="data"></textarea><button type="submit" style="display: block">Stringify</button></form>');
 })
 
 /** basic route */
-app.post('/', function (req, res) {
-	// res.json({"y":1});
-	// console.log(req.body);
-	var _string = req.body.slice(5);
-	var _result;
+app.post('/', (req, res) => {
+
+	let _string = req.body.slice(5);
+	let _result;
 
 	// empty
 	if (!_string) {
-		res.send('<form style="" action="/" method="POST" enctype="text/plain"><textarea style="display: block; width: 500px; height: 250px" name="data"></textarea><button type="submit" style="display: block">Stringify</button></form>');
+		res.render('index.pug', { 'data': '{"foo" : "bar" }', 'result' : "" });
 		return;
 	}
 
 	try {
 		_result = JSON.stringify(JSON.parse(_string));
 		console.log("'" + _result + "'");
-		req.body = "";
-		res.send("<form style='' action='/' method='POST' enctype='text/plain'><textarea style='display: block; width: 500px; height: 250px' name='data'></textarea><button type='submit' style='display: block'>Stringify</button></form><br/>" + "'" + _result + "'");
+		res.render('templates/index.mustache', { 'data': '{"foo" : "bar" }', 'result' : _result });
 	} catch (e) {
-		console.log("'" + _result + "'");
-		req.body = "";
-		res.send("<form style='' action='/' method='POST' enctype='text/plain'><textarea style='display: block; width: 500px; height: 250px' name='data'></textarea><button type='submit' style='display: block'>Stringify</button></form><br/>" + e + "<br/>" + "no valid JSON");
+		res.render('templates/index.mustache', { 'data': '{"foo" : "bar" }', 'result' : e });
 	}
 
 
@@ -65,5 +64,5 @@ app.post('/', function (req, res) {
 
 
 app.listen(3000, function () {
-  console.log('JSON-stringifier listening on port 3000!')
+	console.log('JSON-stringifier listening on port 3000!')
 })
