@@ -132,9 +132,8 @@ https://material.io/
 
 .jsny-base {
 	display: flex;
-	flex-wrap: nowrap;
-	align-items: center;
-	align-content: stretch;
+	flex-wrap: wrap;
+
 	background: #fff;
 	color: #000;
 
@@ -145,34 +144,50 @@ https://material.io/
 	min-width: 100vw;
 	width: 100vw;
 	max-width: 100vw;
+
 }
-.jsny-tile {
-	width: auto;
-	max-width: 50vw;
-	width: auto;
-	flex-grow: 1;
-	flex-shrink: 1;
+
+.jsny-tile--base {
 	border: 1px solid green;
 	padding: 1.5rem 1.5rem;
 }
 
-.jsny-tile--title {
+.jsny-tile--full {
+	width: 100vw;
+}
 
-	font-size: 2.5rem;
-	margin: 0;
+.jsny-tile--half {
+	width: 50vw;
+}
+
+.jsny-introduction {
+	height: 1.25rem;
+	display: inline-flex;
+	align-items: baseline;
+	margin-right: 0.25rem;
+}
+
+.jsny-tile--title {
+	font-size: 1.25rem;
+	letter-spacing: .2px;
+	text-transform: uppercase;
 	color: #363636;
 	word-break: break-word;
-	font-weight: 600;
-	line-height: 1.125;
+
 }
 .jsny-tile--subtitle {
 	word-break: break-word;
 	color: #4a4a4a;
-	font-weight: 400;
-	line-height: 1.25;
+	font-size: 1rem;
 }
 
+.jsny-input {
+	height: calc(100vh - 1.25rem);
+}
 
+.jsny-output {
+	height: calc(100vh - 1.25rem);
+}
 
 .jsny-tile--code {
 	background-color: whitesmoke;
@@ -183,6 +198,7 @@ https://material.io/
 	-moz-osx-font-smoothing: auto;
 	-webkit-font-smoothing: auto;
 	font-family: monospace;
+
 }
 
 .jsny-input--textarea {
@@ -196,18 +212,21 @@ https://material.io/
 </style>
 
 	<body class="jsny-base">
-		<section class="jsny-introduction jsny-tile">
+		<header class="jsny-introduction jsny-tile--base jsny-tile--full">
 			<h1 class="jsny-tile--title">JSON Stringify</h1>
 			<p class="jsny-tile--subtitle flow-text">Converts your JSON Object into a valid JSON string!</p>
-		</section>
-		<section class="jsny-input jsny-tile">
+		</header>
+
+		<section class="jsny-input jsny-tile--base jsny-tile--half ">
 			<form action="/" method="POST" enctype="text/plain" name="data" class="jsny-input--form">
 				<textarea name="data" id="data" class="jsny-input--textarea jsny-tile--code">{{data}}</textarea>
 				<button type="submit">stringify!</button>
 			</form>
 	</section>
-	<section class="jsny-output jsny-tile">
+	<section class="jsny-output jsny-tile--base jsny-tile--half ">
 
 	</section>
+
+
 </body>
 </html>
