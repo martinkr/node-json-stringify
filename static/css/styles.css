@@ -1,0 +1,155 @@
+html,
+body,
+p,
+ol,
+ul,
+li,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  /*font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;*/
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+button,
+textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto Mono';
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.jsny-base {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #eee;
+  color: #212121;
+  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  min-width: 320px;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+.jsny-tile--base {
+  width: calc(50vw - 2.25rem - 25px);
+  margin: 1.5rem;
+  padding: 1.5rem 1.5rem;
+  background: #fff;
+  border: 1px solid #bdbdbd;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
+  height: calc(100vh - 6rem);
+}
+
+.jsny-tile--base:nth-child(odd) {
+  margin: 1.5rem 1.5rem 1.5rem 2.3rem;
+}
+
+.jsny-tile--base:nth-child(even) {
+  margin: 1.5rem 2.3rem 1.5rem 1.5rem;
+}
+
+.jsny-introduction {
+  height: 3rem;
+  padding: 1rem 1.5rem 2.5rem 1.5rem;
+  display: inline-flex;
+  align-items: baseline;
+  margin-right: 0.25rem;
+  background: #ffeb3b;
+  color: #000;
+  width: 100vw;
+}
+
+.jsny-tile--title {
+  font-size: 1.25rem;
+  letter-spacing: .2px;
+  text-transform: uppercase;
+  word-break: break-word;
+  margin-right: 0.75rem;
+  font-weight: 400;
+}
+
+.jsny-tile--subtitle {
+  word-break: break-word;
+  font-size: 1rem;
+}
+
+.jsny-textarea {
+  font-weight: normal;
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
+  font-family: monospace;
+  font-size: 1rem;
+  resize: none;
+  outline: 2px solid #fff;
+  border: none;
+  transition: all .2s cubic-bezier(.4, 0, .2, 1);
+}
+
+.jsny-textarea:hover {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+}
+
+.jsny-textarea:active,
+.jsny-textarea:focus {
+  outline: 2px solid #000a12;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+}
+
+.jsny-output {
+}
+
+.jsny-button {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 1.55rem);
+  width: 50px;
+  height: 50px;
+  transform: translate3d(-50px, 0px, 0);
+  background-color: transparent;
+  border: none;
+  text-indent: -999rem;
+  background-size: 50px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzIwMCcgZmlsbD0iIzAwMDAwMCIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIiB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTk1Mi4zNjIxOCkiPjxwYXRoIHN0eWxlPSJ0ZXh0LWluZGVudDowO3RleHQtdHJhbnNmb3JtOm5vbmU7ZGlyZWN0aW9uOmx0cjtibG9jay1wcm9ncmVzc2lvbjp0YjtiYXNlbGluZS1zaGlmdDpiYXNlbGluZTtjb2xvcjojMDAwMDAwO2VuYWJsZS1iYWNrZ3JvdW5kOmFjY3VtdWxhdGU7IiBkPSJtIDk2LjAwMDAxNSwxMDAyLjM2MjIgYyAwLC0yNS4zNDU4MiAtMjAuNjU0MDksLTQ2LjAwMDAxIC00Ni4wMDAwMywtNDYuMDAwMDEgLTI1LjM0NTcsMCAtNDYsMjAuNjU0MTUgLTQ2LDQ2LjAwMDAxIDAsMjUuMzQ1OSAyMC42NTQzLDQ2IDQ2LDQ2IDI1LjM0NTkyLDAgNDYuMDAwMDMsLTIwLjY1NDEgNDYuMDAwMDMsLTQ2IHogbSAtMTAsMCBjIDAsMTkuOTQxNSAtMTYuMDU4NDksMzYgLTM2LjAwMDAzLDM2IC0xOS45NDEzLDAgLTM2LC0xNi4wNTg1IC0zNiwtMzYgMCwtMTkuOTQxMzcgMTYuMDU4NywtMzYuMDAwMDEgMzYsLTM2LjAwMDAxIDE5Ljk0MTUyLDAgMzYuMDAwMDMsMTYuMDU4NiAzNi4wMDAwMywzNi4wMDAwMSB6IG0gLTE0LjE4NzUsMCAtMy4xMjUsLTMuNDA2MjYgLTI0LjAwMDAzLC0yNiAtNy4zNDM3LDYuODEyNSAyMC44NDM3MywyMi41OTM3NiAtMjAuODQzNzMsMjIuNTkzNyA3LjM0MzcsNi44MTI1IDI0LjAwMDAzLC0yNiAzLjEyNSwtMy40MDYyIHoiIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMSIgc3Ryb2tlPSJub25lIiBtYXJrZXI9Im5vbmUiIHZpc2liaWxpdHk9InZpc2libGUiIGRpc3BsYXk9ImlubGluZSIgb3ZlcmZsb3c9InZpc2libGUiLz48L2c+PC9zdmc+");
+}
+
+.jsny-button {
+  outline: none;
+  border: none;
+  transition: all .2s cubic-bezier(.4, 0, .2, 1);
+  transform-origin: 50%;
+}
+
+.jsny-button:hover {
+  transform: translate3d(-50px, 0px, 0) scale(1.2);
+}
+
+.jsny-button:active,
+.jsny-button:focus {
+  transform: translate3d(-50px, 0px, 0) scale(1.2);
+}
