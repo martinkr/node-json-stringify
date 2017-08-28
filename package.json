@@ -4,7 +4,8 @@
   "description": "A very basic service with one purpose: stringify a JSON object",
   "main": "./server.js",
   "scripts": {
-    "start": "forever -o out.log -e err.log ./server.js"
+    "start": "forever -o out.log -e err.log ./server.js",
+    "dev": "./node_modules/.bin/nodemon -e css,js,mustache ./server.js"
   },
   "repository": {
     "type": "git",
