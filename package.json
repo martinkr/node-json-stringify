@@ -23,6 +23,7 @@
   "dependencies": {
     "body-parser": "^1.16.0",
     "browser-sync": "^2.18.13",
+    "clipboard-copy": "^1.2.0",
     "express": "^4.14.1",
     "forever": "^0.15.3",
     "mustache": "^2.3.0",
