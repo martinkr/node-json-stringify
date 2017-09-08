@@ -26,6 +26,21 @@ const bodyParser = require('body-parser');
 const mustacheExpress = require('mustache-express');
 const path = require("path");
 const CUT = "input=".length;
+const colorMap = [
+	"rgb(213, 0, 0)",
+	"rgb(197, 17, 98)",
+	"rgb(170, 0, 255)",
+	"rgb(98, 0, 234)",
+	"rgb(48, 79, 254)",
+	"rgb(41, 98, 255)",
+	"rgb(0, 145, 234)",
+	"rgb(0, 200, 83)",
+	"rgb(100, 221, 23)",
+	"gb(255, 214, 0)",
+	"gb(255, 171, 0)",
+	"rgb(255, 109, 0)",
+	"rgb(221, 44, 0)"
+]
 
 // setup app for parsing application/json
 app.use(bodyParser.text());
@@ -35,47 +50,60 @@ app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.use('/css', express.static(path.join(__dirname, '/static/css')))
 
+const _randomColor = () => colorMap[Math.floor(Math.random() * colorMap.length)];
+
 /** basic route */
 app.get('/', (req, res) => {
-	res.render('index.mustache', { 'placeholder': '{"foo" : "bar" }', 'out' : "" });
-	// res.send('<form style="" action="/" method="POST" enctype="text/plain"><textarea style="display: block; width: 500px; height: 250px" name="placeholder"></textarea><button type="submit" style="display: block">Stringify</button></form>');
+	res.render('index.mustache', {
+		'placeholder': '{"foo" : "bar" }',
+		'out': "",
+		"theme": _randomColor()
+	});
 })
 
 /** basic route */
 app.post('/', (req, res) => {
 
-	let _string = req.body.slice(CUT);
-	let _out;
+	var _string, _out, _errorPos;
 
-console.log(req.body, "=>", _string)
+	_string = req.body.slice(CUT);
+
 	// empty
 	if (!_string) {
-		res.render('index.mustache', { 'placeholder': '{"foo" : "bar" }', 'out' : "" });
+		res.render('index.mustache', {
+			'placeholder': '{"foo" : "bar" }',
+			'out': "",
+			"theme": _randomColor()
+		});
 		return;
 	}
 
 	try {
-		_out = "'"+JSON.stringify(JSON.parse(_string))+ "'";
-		res.render('index.mustache', { 'placeholder': '{"foo" : "bar" }', 'out' : _out });
+		_out = "'" + JSON.stringify(JSON.parse(_string)) + "'";
+		res.render('index.mustache', {
+			'placeholder': '{"foo" : "bar" }',
+			'out': _out,
+			"theme": _randomColor()
+		});
 	} catch (error) {
-		console.log("error", typeof(error))
+
 		_out = error.toString();
 		_out += "<hr />"
 
+		_errorPos = Number(error.toString().slice(error.toString().lastIndexOf(" ") + 1));
 
-		var _errorPos = Number(error.toString().slice(error.toString().lastIndexOf(" ") + 1));
 		if (_errorPos !== 0) {
-			_out += _string.slice(0, _errorPos-1) + '<span class="jsny-error">' + _string.slice(_errorPos-1,_errorPos) + '</span>' + _string.slice(_errorPos);
+			_out += _string.slice(0, _errorPos - 1) + '<span class="jsny-error">' + _string.slice(_errorPos - 1, _errorPos) + '</span>' + _string.slice(_errorPos);
 		} else {
 			_out += _string;
 		}
 
-		console.log("_out",_out)
-
-
-		res.render('index.mustache', { 'placeholder': '{"foo" : "bar" }', 'out' : _out });
+		res.render('index.mustache', {
+			'placeholder': '{"foo" : "bar" }',
+			'out': _out,
+			"theme": _randomColor()
+		});
 	}
-
 
 })
 
