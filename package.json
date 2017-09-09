@@ -1,11 +1,16 @@
 {
   "name": "node-json-stringify",
-  "version": "1.2.1",
+  "version": "3.1.0",
   "description": "A very basic service with one purpose: stringify a JSON object",
-  "main": "./server.js",
+  "main": "./main.js",
   "scripts": {
-    "start": "forever -o /dev/null -e /dev/null ./server.js",
-    "dev": "./node_modules/.bin/nodemon -e css,js,mustache ./server.js"
+    "build": "yarn run lint && yarn run styles && yarn run scripts && echo $npm_package_version > VERSION.md",
+    "lint": "./node_modules/.bin/eslint */*.js && ./node_modules/.bin/stylelint ./views/css/*.css",
+    "styles": "./node_modules/.bin/postcss ./views/css/styles.css > ./static/css/bundle.css",
+    "scripts": "./node_modules/.bin/browserify -d -e ./client/main.js -o ./static/js/bundle.js -t [ babelify --comments false ] && ./node_modules/.bin/uglifyjs ./static/js/bundle.js -o ./static/js/bundle.js",
+    "prestart": "yarn run build",
+    "start": "forever -o /dev/null -e /dev/null ./main.js",
+    "dev": "./node_modules/.bin/nodemon -e css,js,mustache ./main.js"
   },
   "repository": {
     "type": "git",
@@ -21,16 +26,25 @@
   "author": "Martin Krause <github@mkrause.info> (http://martinkr.github.io)",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.16.0",
-    "browser-sync": "^2.18.13",
+    "body-parser": "^1.18.0",
     "clipboard-copy": "^1.2.0",
     "express": "^4.14.1",
     "forever": "^0.15.3",
     "mustache": "^2.3.0",
-    "mustache-express": "^1.2.5",
-    "pug": "^2.0.0-rc.3"
+    "mustache-express": "^1.2.5"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "babel": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "cssnano": "^3.10.0",
+    "cssnano-preset-advanced": "^4.0.0-rc.2",
+    "eslint": "^4.6.1",
+    "nodemon": "^1.11.0",
+    "postcss-cli": "^4.1.1",
+    "stylelint": "^8.1.1",
+    "uglify-js": "^3.0.28"
   }
 }

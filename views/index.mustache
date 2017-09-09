@@ -6,27 +6,27 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>JSON Stringity</title>
+		<title>JSON Stringify</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Roboto+Mono:400,700|Material+Icons+Extended" rel="stylesheet">
-		<link href="./css/styles.css" rel="stylesheet">
+		<link href="/css/bundle.css" rel="stylesheet">
 	</head>
 
 
-
 	<body>
-		<header class="jsny-introduction" style="background-color: {{theme}};">
+		<header class="jsny-introduction js--introduction" style="background-color: {{decorator.color}};">
 			<h1 class="jsny-tile--title">JSON Stringify</h1>
 			<p class="jsny-tile--subtitle flow-text">Converts your JSON Object into a valid JSON string!</p>
 		</header>
 
 		<form action="/" method="POST" enctype="text/plain" class="jsny-base">
 
-			<textarea class="jsny-input jsny-tile--base jsny-textarea" tabindex="1" placehoder="{{placeholder}}" name="input" autofocus required></textarea>
+			<textarea class="jsny-input jsny-tile--base jsny-textarea" tabindex="1" placehoder="{{placeholder}}" name="input" autofocus required>{{in}}</textarea>
 
-			<button type="submit" class="jsny-button" name="submit">stringify!</button>
-			<div class="jsny-output jsny-tile--base jsny-textarea">{{{out}}}</div>
+			<button type="submit" class="jsny-button">stringify!</button>
+			<div class="jsny-output jsny-tile--base jsny-textarea js--output">{{{out}}}</div>
 		</form>
 
+		<script src="/js/bundle.js"></script>
 
 	</body>
 

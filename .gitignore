@@ -1,1 +1,5 @@
 node_modules
+VERSION*
+.DS_*
+*.log
+todo.md
