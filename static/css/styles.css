@@ -56,7 +56,7 @@ body {
 	background: #64dd17;
 	color: #000;
 	width: 100vw;
-	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .jsny-base {
