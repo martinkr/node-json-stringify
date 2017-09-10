@@ -1,6 +1,6 @@
 {
   "name": "node-json-stringify",
-  "version": "3.1.1",
+  "version": "3.3.0",
   "description": "A very basic service with one purpose: stringify a JSON object",
   "main": "./main.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "styles": "./node_modules/.bin/postcss ./views/css/styles.css > ./static/css/bundle.css",
     "scripts": "./node_modules/.bin/browserify -d -e ./client/main.js -o ./static/js/bundle.js -t [ babelify --comments false ] && ./node_modules/.bin/uglifyjs ./static/js/bundle.js -o ./static/js/bundle.js",
     "prestart": "yarn run build",
-    "start": "forever -o /dev/null -e /dev/null ./main.js",
+    "start": "NODE_ENV=production ./node_modules/.bin/forever -o /dev/null -e /dev/null ./main.js",
     "dev": "./node_modules/.bin/nodemon -e css,js,mustache ./main.js"
   },
   "repository": {
@@ -28,6 +28,7 @@
   "dependencies": {
     "body-parser": "^1.18.0",
     "clipboard-copy": "^1.2.0",
+    "compression": "^1.7.0",
     "express": "^4.14.1",
     "forever": "^0.15.3",
     "mustache": "^2.3.0",

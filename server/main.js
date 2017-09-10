@@ -18,12 +18,15 @@ const app = express();
 
 const bodyParser = require('body-parser');
 const mustacheExpress = require('mustache-express');
+const compression = require('compression');
 
 const path = require("path");
 
 const randomdDecorator = require('./../shared/decorator-random.js');
 const contentCreator = require('./../shared/creator-content.js');
 
+// setup gzip
+app.use(compression())
 
 // setup app for parsing application/json
 app.use(bodyParser.text());
@@ -50,5 +53,5 @@ app.post('/', (req, res) => {
 // run!
 app.listen(port, function () {
 	// eslint-disable-next-line no-console
-	console.log(`JSON-stringifier is listening on port ${port}. Visit: http://localhost:${port}`)
+	console.log(`JSON-stringifier is listening on port ${port}. Visit: http://localhost:${port} while NODE_ENV is set to ${process.env.NODE_ENV }`);
 })

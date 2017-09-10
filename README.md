@@ -34,7 +34,7 @@ Requires ```nodejs```. Recomended: ```v8.4.0```, but it might work with older ve
 - Isomorphic ecmaScript 2015  with ```babeljs v6.23.0```, ```babelify v7.3.0```, ```browserify v14.4.0``` and ```uglify-js v3.0.28 ```
 - Rendering ```Mustache v2.3.0``` templates
 - CSS 3 piped through ```postcss-cli v4.1.1``` with ```cssnano v3.10.0``` and ```cssnano-preset-advanced v4.0.0-rc.2```,
-- Running on ```expres`v4.14.1```
+- Running on ```express`v4.14.1```
 - With ```forever v0.15.3```
 
 
