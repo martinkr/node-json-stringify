@@ -1,5 +1,6 @@
 node_modules
 VERSION*
-.DS_*
+.DS_Store
 *.log
 todo.md
+static/bundle.*

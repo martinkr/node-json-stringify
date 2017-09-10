@@ -1,25 +1,15 @@
 /**
  * A very basic service with one purpose: stringify a JSON object
  *
- * @requires
- *  - node > 4
- *  - express.js ^4
- *  - body-parser ^1.16.0
- *
- *
  * @example
- * $ node ./main.js
- * $ forever ./main.js
- * $ yarn start
+*  Run $ yarn && yarn start, afterwards  go to http://localhost:3000/
  *
- * Example: http://localhost:3000/
+ * @copyright 2016, 2017 Martin Krause <github@mkrause.info> (http://martinkr.github.io)
+ * @license MIT license: https://opensource.org/licenses/MIT
  *
- * Copyright (c) 2016 Martin Krause <github@mkrause.info> (http://martinkr.github.io)
- * Licensed under the MIT license: https://opensource.org/licenses/MIT
+ * @author Martin Krause <github@mkrause.info>
  *
- * @author Martin Krause github@mkrause.info
  */
-
 
 const app = require('./server/main');
 

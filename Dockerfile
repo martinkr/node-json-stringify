@@ -4,7 +4,7 @@ FROM node:alpine
 ENV NPM_CONFIG_LOGLEVEL warn
 
 # avoid root, switch to the "node" user
-USER node
+# USER node
 
 # set the working directory to the user home
 WORKDIR /home/node
