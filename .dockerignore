@@ -1,3 +1,13 @@
+.DS_Store
+
+todo.md
+*.log
+
 node_modules
+coverage
+
+VERSION*
+static/**/bundle.*
+.travis.yml
+
 yarn.lock
-yarn-error.log

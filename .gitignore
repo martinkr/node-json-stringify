@@ -1,6 +1,10 @@
-node_modules
-VERSION*
 .DS_Store
-*.log
+
 todo.md
-static/bundle.*
+*.log
+
+node_modules
+coverage
+
+VERSION*
+static/**/bundle.*

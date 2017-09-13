@@ -1,4 +1,5 @@
 /**
+* @module server/main
  * The server component!
  * Renders the service.
  *
@@ -55,3 +56,6 @@ app.listen(port, function () {
 	// eslint-disable-next-line no-console
 	console.log(`JSON-stringifier is listening on port ${port}. Visit: http://localhost:${port} while NODE_ENV is set to ${process.env.NODE_ENV }`);
 })
+
+// exports for supertest
+module.exports = app;

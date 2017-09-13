@@ -1,4 +1,4 @@
-# JSON Stringify
+# JSON Stringify [![Build Status](https://travis-ci.org/martinkr/node-json-stringify.svg?branch=master)](https://travis-ci.org/martinkr/node-json-stringify)
 An isomorphic service with one purpose: stringify a JSON-Object. Simple but convenient.
 
 ## Whait what?!
@@ -15,15 +15,17 @@ You can also type directly into the ```textarea``` and get instant feedback. Jus
 # Local
 Clone the repository: ``` $ git clone https://github.com/martinkr/node-json-stringify.git```
 
-## Docker
+## With the included Dockerfile
+Fast and clean. No additional files on your machine.
 - Build the image: ```$ docker build -t jsonstringify:latest . ```
 - Start the container: ```$ docker run -p 3001:3000 jsonstringify:latest```
-- Go to: [http://localhost:3000](http://localhost:3000)
+- Go to: [http://localhost:3001](http://localhost:3001)
 
 Uses ``` alpine:3.6``` and ```node:8.4.0```.
 
 
-## Direct
+### Directly on your machine:
+Fast and easy, but all those node_modules ...
 - Install dependencies ```$ npm install``` or ```$ yarn ```
 - Build the files and start server ```$ npm start``` or ```$ yarn start ```
 - Go to: [http://localhost:3000](http://localhost:3000)
@@ -31,7 +33,7 @@ Uses ``` alpine:3.6``` and ```node:8.4.0```.
 Requires ```nodejs```. Recomended: ```v8.4.0```, but it might work with older versions too.
 
 # Tech Stack
-- Isomorphic ecmaScript 2015  with ```babeljs v6.23.0```, ```babelify v7.3.0```, ```browserify v14.4.0``` and ```uglify-js v3.0.28 ```
+- Isomorphic ECMAScript 2015  with ```babeljs v6.23.0```, ```babelify v7.3.0```, ```browserify v14.4.0``` and ```uglify-js v3.0.28 ```
 - Rendering ```Mustache v2.3.0``` templates
 - CSS 3 piped through ```postcss-cli v4.1.1``` with ```cssnano v3.10.0``` and ```cssnano-preset-advanced v4.0.0-rc.2```,
 - Running on ```express`v4.14.1```

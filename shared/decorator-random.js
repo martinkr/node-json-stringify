@@ -33,7 +33,10 @@ const colorMap = [
  * @returns {Object} the content object, decorated with a random color theme.
  */
 module.exports = (content) => {
-	let _clone = { ...content };
-	_clone.decorator = { "color": colorMap[Math.floor(Math.random() * colorMap.length)] }
-	return _clone;
+	// let _clone = { ...content };
+	// _clone.decorator = { "color": colorMap[Math.floor(Math.random() * colorMap.length)] }
+	// return _clone;
+
+	content.decorator = { "color": colorMap[Math.floor(Math.random() * colorMap.length)] }
+	return content;
 };
