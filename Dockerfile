@@ -16,8 +16,9 @@ ADD . /app
 RUN yarn
 
 # classic express port
-EXPOSE 3000
+# EXPOSE 3000
 
 # run the startup script.
 # if none is defined, $ yarn start defaults to $ node server.js
-CMD [ "yarn", "start" ]
+#CMD [ "yarn", "start" ]
+CMD [ "tail", "-f" ,"/dev/null" ]
