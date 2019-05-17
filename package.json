@@ -1,6 +1,6 @@
 {
   "name": "node-json-stringify",
-  "version": "3.5.0",
+  "version": "3.6.0",
   "description": "A very basic service with one purpose: stringify a JSON object",
   "main": "./main.js",
   "scripts": {
