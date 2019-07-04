@@ -14,7 +14,9 @@
     "test": "yarn nyc && yarn report && yarn coverage",
     "prestart": "yarn run build",
     "start": "NODE_ENV=production ./node_modules/.bin/forever -o /dev/null -e /dev/null ./main.js",
-    "dev": "NODE_ENV=development ./node_modules/.bin/nodemon -e css,js,mustache ./main.js"
+    "dev": "NODE_ENV=development ./node_modules/.bin/nodemon -e css,js,mustache ./main.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -36,7 +38,8 @@
     "express": "^4.14.1",
     "forever": "^0.15.3",
     "mustache": "^2.3.0",
-    "mustache-express": "^1.2.5"
+    "mustache-express": "^1.2.5",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -55,5 +58,6 @@
     "stylelint": "^9.8.0",
     "supertest": "^3.0.0",
     "uglify-js": "^3.0.28"
-  }
+  },
+  "snyk": true
 }
